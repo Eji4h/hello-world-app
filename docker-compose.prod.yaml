@@ -1,0 +1,8 @@
+version: '3.7'
+services:
+  api:
+    image: asia.gcr.io/niiz-ashi/hello-world:1.0.0
+    ports:
+      - 3000:3000
+    env_file: ./environments/.env
+    restart: always

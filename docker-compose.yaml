@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  api:
+    build: .
+    ports:
+      - 40010:3000
+    env_file: ./environments/.env
+    volumes:
+      - ./:/usr/src/app:delegated
+    command: "start:prod"
+    restart: always
