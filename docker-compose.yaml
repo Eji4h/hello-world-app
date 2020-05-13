@@ -1,9 +1,10 @@
 version: '3.7'
 services:
-  api:
+  hello-app:
     build: .
     ports:
       - 3000:3000
+      - 9000:9000
     env_file: ./environments/.env
     volumes:
       - ./:/usr/src/app:delegated

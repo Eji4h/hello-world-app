@@ -1,6 +1,6 @@
 version: '3.7'
 services:
-  data-api:
+  hello-app:
     image: node:12.14
     working_dir: /usr/src/app
     volumes:
