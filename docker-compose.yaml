@@ -5,7 +5,10 @@ services:
     ports:
       - 3000:3000
       - 9000:9000
-    env_file: ./environments/.env
+    environment: 
+      - HOST=localhost
+      - PORT=3000
+      - KUBERNETES_SERVICE_HOST=true
     volumes:
       - ./:/usr/src/app:delegated
     command: "start:dev"

@@ -35,6 +35,7 @@ app.get("/shutdown", (_, res) => {
 });
 
 lightship.registerShutdownHandler(async () => {
+  console.log('Clear resource for shutdown.');
   await delay(shutdownTime);
   server.close();
 });
