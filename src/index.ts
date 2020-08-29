@@ -1,12 +1,11 @@
 import express from "express";
+import { v4 as uuidv4 } from 'uuid';
+import { createLightship } from 'lightship';
 const app = express();
 const host = process.env.HOST;
 const port = parseInt(process.env.PORT || '3000');
 const readyTime = parseInt(process.env.READY_TIME || '10000');
 const shutdownTime = parseInt(process.env.SHUTDOWN_TIME || '10000');
-
-import uuidv4 from 'uuid/v4';
-import { createLightship } from 'lightship';
 
 const uuid = uuidv4()
 const lightship = createLightship();

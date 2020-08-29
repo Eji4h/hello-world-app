@@ -1,8 +1,13 @@
 version: '3.7'
 services:
+
   hello-app:
-    image: <docker-hub-username>/hello-world:1.0.0
+    image: eji4h/dks-hello-world-app:1.0.0
+    restart: always
+    environment: 
+      - HOST=localhost
+      - PORT=3000
+      - KUBERNETES_SERVICE_HOST=true
     ports:
       - 3000:3000
-    env_file: ./environments/.env
-    restart: always
+      - 9000:9000

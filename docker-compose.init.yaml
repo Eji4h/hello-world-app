@@ -1,8 +1,9 @@
 version: '3.7'
 services:
+
   hello-app:
-    image: node:12.14
+    image: node:14.7-slim
     working_dir: /usr/src/app
     volumes:
-      - ./:/usr/src/app:delegated
-    entrypoint: sh -c "yarn global add typescript && yarn --prod=false"
+      - ./:/usr/src/app
+    entrypoint: [ "sh", "-c", "yarn" ]

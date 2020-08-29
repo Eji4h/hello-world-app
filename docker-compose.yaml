@@ -1,15 +1,16 @@
 version: '3.7'
 services:
+
   hello-app:
-    build: .
-    ports:
-      - 3000:3000
-      - 9000:9000
+    build: ./
+    restart: always
+    command: start:dev
     environment: 
       - HOST=localhost
       - PORT=3000
       - KUBERNETES_SERVICE_HOST=true
+    ports:
+      - 3000:3000
+      - 9000:9000
     volumes:
-      - ./:/usr/src/app:delegated
-    command: "start:dev"
-    restart: always
+      - ./:/usr/src/app
