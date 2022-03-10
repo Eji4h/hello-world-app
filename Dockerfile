@@ -1,11 +1,11 @@
-FROM node:14.7-slim AS build
+FROM node:16.14-slim AS build
 WORKDIR /usr/src/app
 COPY package* ./
 RUN yarn
 COPY . .
 RUN yarn run build
 
-FROM node:14.7-alpine
+FROM node:16.14-alpine
 WORKDIR /usr/src/app
 COPY package* ./
 RUN yarn --prod

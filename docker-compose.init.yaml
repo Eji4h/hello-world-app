@@ -1,9 +1,8 @@
-version: '3.7'
+version: "3.7"
 services:
-
   hello-app:
-    image: node:14.7-slim
+    image: node:16.14-slim
     working_dir: /usr/src/app
     volumes:
       - ./:/usr/src/app
-    entrypoint: [ "sh", "-c", "yarn" ]
+    entrypoint: ["sh", "-c", "yarn"]
